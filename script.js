@@ -1,10 +1,10 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 var passLength;
-var isLowerCase = false;
-var isUpperCase = false;
-var isNumericCase = false;
-var isSpecialCase = false;
+var isLowerCase;
+var isUpperCase;
+var isNumericCase;
+var isSpecialCase;
 
 // Write password to the #password input
 
@@ -35,6 +35,8 @@ function generatePassword() {
     arrayList.push("special");
   }
   for (var i = 0; i < passLength; i++) {
+    // we access the randomChar object on each iteration with the help of arrayList to access the name of the
+    //function, and after we add () to make the function working
     char = randomChar[
       arrayList[Math.floor(Math.random() * arrayList.length)]
     ]();
@@ -68,6 +70,12 @@ function askUser() {
   passLength = prompt(
     "Type a number between 8 and 128 that will represent the length of you password!"
   );
+  while (isNaN(passLength) || passLength < 8 || passLength > 128) {
+    alert("Enter a number between 8 and 128!");
+    passLength = prompt(
+      "Type a number between 8 and 128 that will represent the length of you password!"
+    );
+  }
   isLowerCase = confirm(
     "Do you want to have LOWER case characters in you password?"
   );
