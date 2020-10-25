@@ -57,6 +57,9 @@ function askUser() {
   passLength = prompt(
     "Type a number between 8 and 128 that will represent the length of you password!"
   );
+  if (passLength === null) {
+    return;
+  }
   while (isNaN(passLength) || passLength < 8 || passLength > 128) {
     alert("Enter a number between 8 and 128!");
     passLength = prompt(
