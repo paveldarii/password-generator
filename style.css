@@ -51,9 +51,17 @@ header {
 }
 
 .card-body {
+  position: relative;
   min-height: 100px;
 }
-
+img {
+  position: absolute;
+  right: 5px;
+  bottom: 10px;
+}
+img:hover {
+  transform: scale(1.05);
+}
 .card-footer {
   text-align: center;
 }
