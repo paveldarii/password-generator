@@ -6,7 +6,7 @@ var isLowerCase;
 var isUpperCase;
 var isNumericCase;
 var isSpecialCase;
-var arrayList;
+var charTypeList;
 var generatedPass;
 // Write password to the #password input
 
@@ -76,33 +76,43 @@ function askUser() {
     "Do you want to have SPECIAL characters in you password?"
   );
 }
-
+// I use the same name as the name of the randomChar object elements and I add the into an array, so the array will have just the elements that the user chose, and this
+// new created array will be used to create the password that user is expecting
 function checkCharType() {
-  arrayList = [];
+  charTypeList = [];
   if (isUpperCase) {
-    arrayList.push("lower");
+    charTypeList.push("lower");
   }
   if (isLowerCase) {
-    arrayList.push("upper");
+    charTypeList.push("upper");
   }
   if (isNumericCase) {
-    arrayList.push("numeric");
+    charTypeList.push("numeric");
   }
   if (isSpecialCase) {
-    arrayList.push("special");
+    charTypeList.push("special");
   }
-  return arrayList;
+  return charTypeList;
 }
 
 function createPassword() {
   var char;
   generatedPass = "";
   for (var i = 0; i < passLength; i++) {
-    // we access the randomChar object on each iteration with the help of arrayList to access the name of the
-    //function, and after we add () to make the function working
-    char = randomChar[
-      arrayList[Math.floor(Math.random() * arrayList.length)]
-    ]();
+    // the purpose of "if" use here is to have at least one character of the type which user chose, and after this, the program will randomly chose other characters
+    if (i === 0 && i < charTypeList.length) {
+      char = randomChar[charTypeList[i]]();
+    } else if (i === 1 && i < charTypeList.length) {
+      char = randomChar[charTypeList[i]]();
+    } else if (i === 2 && i < charTypeList.length) {
+      char = randomChar[charTypeList[i]]();
+    } else if (i === 3 && i < charTypeList.length) {
+      char = randomChar[charTypeList[i]]();
+    } else {
+      char = randomChar[
+        charTypeList[Math.floor(Math.random() * charTypeList.length)]
+      ]();
+    }
     generatedPass += char;
   }
   return generatedPass;
