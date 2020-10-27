@@ -4,14 +4,14 @@
 The password generator site is made with the purpose to generate a random password, that will depend on User preferences regarding length, lower case characters, upper case characters, numeric characters, or special characters.
 
 The first step in using the generator is to push the button Generate Password
-![home page](readme-img/main-page.jpg)
+![home page](readme-img/main-page.jpg)\
 Then, select the length of the password.
-![password length alert](readme-img/pass-length.jpg)
+![password length alert](readme-img/pass-length.jpg)\
 Next, user should answer to four prompt messages.
 ![lower case](readme-img/lower.jpg)\
 ![upper case](readme-img/upper.jpg)\
 ![numeric char](readme-img/numeric.jpg)\
-![special char](readme-img/special.jpg)
+![special char](readme-img/special.jpg)\
 
 After the password is generated, in the right bottom corner is an icon which can be pushed to copy the password to the clipboard.
 
